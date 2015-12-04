@@ -145,7 +145,6 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                 bookIntent.putExtra(BookService.EAN, result.getContents());
                 bookIntent.setAction(BookService.FETCH_BOOK);
                 getActivity().startService(bookIntent);
-                AddBook.this.restartLoader();
             }
 
             // At this point we may or may not have a reference to the activity
