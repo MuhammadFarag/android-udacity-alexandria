@@ -229,4 +229,10 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
         super.onAttach(activity);
         activity.setTitle(R.string.scan);
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        restartLoader();
+    }
 }
