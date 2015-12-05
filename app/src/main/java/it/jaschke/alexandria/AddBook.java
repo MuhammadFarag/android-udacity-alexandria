@@ -141,10 +141,7 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                 Log.d("AddBook", "Cancelled scan");
             } else {
                 Log.d("AddBook", "Scanned");
-                Intent bookIntent = new Intent(getActivity(), BookService.class);
-                bookIntent.putExtra(BookService.EAN, result.getContents());
-                bookIntent.setAction(BookService.FETCH_BOOK);
-                getActivity().startService(bookIntent);
+                ean.setText(result.getContents());
             }
 
             // At this point we may or may not have a reference to the activity
