@@ -1,6 +1,7 @@
 package it.jaschke.alexandria;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -30,19 +31,17 @@ import it.jaschke.alexandria.util.Utility;
  */
 public class NavigationDrawerFragment extends Fragment {
 
+    public static final int DRAWER_POSITION_ADD_BOOK = 1;
+    public static final int DRAWER_POSITION_BOOK_LIST = 0;
     /**
      * Remember the position of the selected item.
      */
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
-
     /**
      * Per the design guidelines, you should show the drawer on launch until the user manually
      * expands it. This shared preference tracks this.
      */
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
-    public static final int DRAWER_POSITION_ADD_BOOK = 1;
-    public static final int DRAWER_POSITION_BOOK_LIST = 0;
-
     /**
      * A pointer to the current callbacks instance (the Activity).
      */
@@ -199,6 +198,13 @@ public class NavigationDrawerFragment extends Fragment {
         mCurrentSelectedPosition = position;
         if (position == DRAWER_POSITION_ADD_BOOK && !Utility.isNetworkAvailable(getActivity())) {
             position = DRAWER_POSITION_BOOK_LIST;
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            AlertDialog alertDialog = builder
+                    .setTitle(R.string.dialog_netowrk_error_title)
+                    .setMessage(R.string.dialog_netowrk_error_message)
+                    .setPositiveButton(R.string.dialog_netowrk_error_button_ok, null)
+                    .create();
+            alertDialog.show();
         }
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
