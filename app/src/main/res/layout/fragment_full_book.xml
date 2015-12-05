@@ -30,28 +30,34 @@
                     android:layout_alignParentStart="true"
                     android:layout_margin="10dp"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_below="@id/fullBookTitle"
+                    android:id="@+id/book_image_and_subtitle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/fullBookCover"
-                    android:contentDescription="@string/book_cover"
-                    android:layout_marginTop="15dp"
-                    android:layout_below="@+id/fullBookTitle"
-                    android:layout_alignLeft="@+id/fullBookTitle"
-                    android:layout_alignStart="@+id/fullBookTitle"/>
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fullBookSubTitle"
-                    android:maxLines="5"
-                    android:ellipsize="end"
-                    android:textSize="18sp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_alignTop="@+id/fullBookCover"
-                    android:layout_toRightOf="@+id/fullBookCover"
-                    android:layout_toEndOf="@+id/fullBookCover"/>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fullBookCover"
+                        android:contentDescription="@string/book_cover"
+
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fullBookSubTitle"
+                        android:layout_marginTop="8dp"
+                        android:maxLines="5"
+                        android:ellipsize="end"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
 
 
                 <TextView
@@ -60,7 +66,7 @@
                     android:id="@+id/fullBookDesc"
                     android:ellipsize="end"
                     android:layout_marginLeft="10dp"
-                    android:layout_below="@+id/fullBookCover"
+                    android:layout_below="@+id/book_image_and_subtitle"
                     android:layout_margin="10dp"
                     />
 
