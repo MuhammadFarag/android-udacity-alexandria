@@ -18,12 +18,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import it.jaschke.alexandria.data.AlexandriaContract;
 import it.jaschke.alexandria.services.BookService;
-import it.jaschke.alexandria.services.DownloadImage;
 
 
 public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -196,8 +196,10 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
         ((TextView) rootView.findViewById(R.id.authors)).setText(authors.replace(",", "\n"));
         String imgUrl = data.getString(data.getColumnIndex(AlexandriaContract.BookEntry.IMAGE_URL));
         if (Patterns.WEB_URL.matcher(imgUrl).matches()) {
-            new DownloadImage((ImageView) rootView.findViewById(R.id.bookCover)).execute(imgUrl);
-            rootView.findViewById(R.id.bookCover).setVisibility(View.VISIBLE);
+            Glide.with(this)
+                    .load(imgUrl)
+                    .placeholder(R.drawable.ic_launcher)
+                    .into((ImageView) rootView.findViewById(R.id.bookCover));
         }
 
         String categories = data.getString(data.getColumnIndex(AlexandriaContract.CategoryEntry.CATEGORY));

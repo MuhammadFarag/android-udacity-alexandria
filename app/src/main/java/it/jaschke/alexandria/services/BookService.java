@@ -129,7 +129,7 @@ public class BookService extends IntentService {
             }
             bookJsonString = buffer.toString();
         } catch (Exception e) {
-            Log.e(LOG_TAG, "Error ", e);
+            Log.e(LOG_TAG, "Error: " + e.getMessage(), e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
