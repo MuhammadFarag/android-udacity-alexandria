@@ -40,7 +40,7 @@
         android:layout_marginRight="10dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/fullBookCover"
-        android:layout_toEndOf="@+id/fullBookCover"/>
+        android:layout_below="@+id/listBookTitle"/>
 
 
 </RelativeLayout>

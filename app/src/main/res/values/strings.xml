@@ -28,8 +28,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="about_text">This application gets book information from a Google API. All titles, cover images, and author information come from there.
     The original version of this app was built by Sascha Jaschke, and a modified version is given to students in the Udacity Android Nanodegree program. </string>
-    <string name="dialog_netowrk_error_title">Network error</string>
-    <string name="dialog_netowrk_error_message">Alexandria requires internet connectivity to be able to retrieve book information.\n Please, make sure you have internet connectivity and try again later...</string>
-    <string name="dialog_netowrk_error_button_ok">Ok!</string>
+    <string name="dialog_network_error_title">Network error</string>
+    <string name="dialog_network_error_message">Alexandria requires internet connectivity to be able to retrieve book information.\n Please, make sure you have internet connectivity and try again later...</string>
+    <string name="dialog_network_error_button_ok">Ok!</string>
     <string name="book_list_empty_view_message">No books available yet, please add some books</string>
 </resources>

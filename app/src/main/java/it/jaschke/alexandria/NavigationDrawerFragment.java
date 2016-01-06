@@ -200,9 +200,9 @@ public class NavigationDrawerFragment extends Fragment {
             position = DRAWER_POSITION_BOOK_LIST;
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             AlertDialog alertDialog = builder
-                    .setTitle(R.string.dialog_netowrk_error_title)
-                    .setMessage(R.string.dialog_netowrk_error_message)
-                    .setPositiveButton(R.string.dialog_netowrk_error_button_ok, null)
+                    .setTitle(R.string.dialog_network_error_title)
+                    .setMessage(R.string.dialog_network_error_message)
+                    .setPositiveButton(R.string.dialog_network_error_button_ok, null)
                     .create();
             alertDialog.show();
         }
