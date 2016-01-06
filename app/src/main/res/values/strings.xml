@@ -31,4 +31,5 @@
     <string name="dialog_netowrk_error_title">Network error</string>
     <string name="dialog_netowrk_error_message">Alexandria requires internet connectivity to be able to retrieve book information.\n Please, make sure you have internet connectivity and try again later...</string>
     <string name="dialog_netowrk_error_button_ok">Ok!</string>
+    <string name="book_list_empty_view_message">No books available yet, please add some books</string>
 </resources>

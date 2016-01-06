@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import it.jaschke.alexandria.api.BookListAdapter;
 import it.jaschke.alexandria.api.Callback;
@@ -63,6 +64,8 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
         bookList = (ListView) rootView.findViewById(R.id.listOfBooks);
         bookList.setAdapter(bookListAdapter);
 
+        TextView emptyView = (TextView) rootView.findViewById(R.id.books_list_empty);
+        bookList.setEmptyView(emptyView);
         bookList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
